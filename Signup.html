@@ -5,64 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
   <style>
+    /* General Styling */
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f9;
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
+
     .container {
+      width: 100%;
       max-width: 400px;
-      margin: 50px auto;
       background: #fff;
-      padding: 20px;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px 30px;
     }
+
     h2 {
       text-align: center;
+      color: #333;
       margin-bottom: 20px;
     }
+
     label {
+      font-weight: bold;
       display: block;
-      margin: 10px 0 5px;
+      margin-bottom: 5px;
+      color: #555;
     }
+
     input {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
     }
+
     button {
       width: 100%;
       padding: 10px;
       background-color: #5cb85c;
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
+      margin-top: 10px;
     }
+
     button:hover {
       background-color: #4cae4c;
     }
+
     .social-buttons button {
-      margin-top: 10px;
       background-color: #4285F4; /* Google Blue */
+      margin-top: 10px;
+      color: white;
+      font-size: 14px;
     }
+
     .social-buttons button.facebook {
-      background-color: #3b5998;
+      background-color: #3b5998; /* Facebook Blue */
     }
+
     .social-buttons button:hover {
       opacity: 0.9;
     }
-    .text-center {
+
+    .divider {
       text-align: center;
+      margin: 15px 0;
+      color: #aaa;
     }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      display: inline-block;
+      width: 40%;
+      height: 1px;
+      background: #ddd;
+      vertical-align: middle;
+      margin: 0 10px;
+    }
+
     .small-text {
+      text-align: center;
       font-size: 12px;
       color: #888;
+      margin-top: 15px;
+    }
+
+    .small-text a {
+      color: #4285F4;
+      text-decoration: none;
+    }
+
+    .small-text a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -72,22 +120,23 @@
 
     <!-- Basic Sign-Up Form -->
     <form action="/signup" method="POST">
-      <label for="name">Full Name:</label>
+      <label for="name">Full Name</label>
       <input type="text" id="name" name="name" placeholder="Enter your full name" required>
       
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
       
-      <label for="password">Password:</label>
+      <label for="password">Password</label>
       <input type="password" id="password" name="password" placeholder="Create a password" required>
       
-      <label for="confirm_password">Confirm Password:</label>
+      <label for="confirm_password">Confirm Password</label>
       <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
       
       <button type="submit">Sign Up</button>
     </form>
 
-    <hr>
+    <!-- Divider -->
+    <div class="divider">or</div>
 
     <!-- Social Media Sign-Up -->
     <div class="social-buttons">
@@ -95,17 +144,13 @@
       <button class="facebook" onclick="location.href='/auth/facebook'">Sign Up with Facebook</button>
     </div>
 
-    <hr>
-
-    <!-- OTP Sign-Up -->
-    <form action="/verify-otp" method="POST">
-      <label for="phone">Phone Number:</label>
-      <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
-      
-      <button type="submit">Send OTP</button>
-    </form>
-
-    <p class="text-center small-text">By signing up, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
+    <!-- Small Text -->
+    <p class="small-text">
+      By signing up, you agree to our 
+      <a href="/terms">Terms of Service</a> and 
+      <a href="/privacy">Privacy Policy</a>.
+    </p>
   </div>
 </body>
 </html>
+
