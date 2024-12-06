@@ -4,127 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
-  <style>
-    /* General Styling */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 400px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      padding: 20px 30px;
-    }
-
-    h2 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-      color: #555;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #5cb85c;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background-color: #4cae4c;
-    }
-
-    .social-buttons button {
-      background-color: #4285F4; /* Google Blue */
-      margin-top: 10px;
-      color: white;
-      font-size: 14px;
-    }
-
-    .social-buttons button.facebook {
-      background-color: #3b5998; /* Facebook Blue */
-    }
-
-    .social-buttons button:hover {
-      opacity: 0.9;
-    }
-
-    .divider {
-      text-align: center;
-      margin: 15px 0;
-      color: #aaa;
-    }
-
-    .divider::before,
-    .divider::after {
-      content: "";
-      display: inline-block;
-      width: 40%;
-      height: 1px;
-      background: #ddd;
-      vertical-align: middle;
-      margin: 0 10px;
-    }
-
-    .small-text {
-      text-align: center;
-      font-size: 12px;
-      color: #888;
-      margin-top: 15px;
-    }
-
-    .small-text a {
-      color: #4285F4;
-      text-decoration: none;
-    }
-
-    .small-text a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
 <body>
   <h2>Sign Up</h2>
-  <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
+  <form id="signup-form">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
     <button type="submit">Sign Up</button>
   </form>
+  <p id="message"></p>
+
+  <!-- Supabase JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <!-- Supabase Logic -->
+  <script src="app.js"></script>
 </body>
 </html>
-
